@@ -1,4 +1,4 @@
-package ru.mentee.power;
+package main.java.ru.mentee.power;
 
 public class HelloWorld {
     public static void main(String[] args) {
