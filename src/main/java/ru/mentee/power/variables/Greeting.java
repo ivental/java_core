@@ -1,4 +1,4 @@
-package main.java.ru.mentee.power;
+package ru.mentee.power.variables;
 
 public class Greeting {
     public static String getGreeting(String name) {

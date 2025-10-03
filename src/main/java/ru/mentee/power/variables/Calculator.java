@@ -1,4 +1,4 @@
-package main.java.ru.mentee.power;
+package ru.mentee.power.variables;
 
 public class Calculator {
     public int add(int a, int b) {
