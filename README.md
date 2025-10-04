@@ -11,9 +11,14 @@
     - `ru.mentee.power.HelloGit.java` - простой пример работы с Git
     - `ru.mentee.power.Greeting` - простой пример с приветствием
     - `ru.mentee.power.Calculator` - простой пример калькулятора.
-    - `ru.mentee.power.variables PersonalCard` - карточка с личными данными.
-    - `ru.mentee.power.variables TypeCalculator ` - калькулятор конвертер типов данных.
-    - `ru.mentee.power.variables StringOperations ` - класс, который демонстрирует различные операции с разными типами данных.
-    - `ru.mentee.power.variables ConstantsAndScope ` - программа демонстрирует использование констант и области видимости переменных.
-    - `ru.mentee.power.variables TemperatureConverter ` - программа, которая конвертирует температуру между шкалами Цельсия, Фаренгейта и Кельвина.
+  
+- Пакет `variables` содержит:
+  - `variables PersonalCard` - карточка с личными данными.
+  - `variables TypeCalculator ` - калькулятор конвертер типов данных.
+  - `variables StringOperations ` - класс, который демонстрирует различные операции с разными типами данных.
+  - `variables ConstantsAndScope ` - программа демонстрирует использование констант и области видимости переменных.
+  - `variables TemperatureConverter ` - программа, которая конвертирует температуру между шкалами Цельсия, Фаренгейта и Кельвина.
+
+ - Пакет `datatypes` содержит:
+ - `variables DataTypes` - класс, демонстрирующий преобразование разных типов данных.
   
