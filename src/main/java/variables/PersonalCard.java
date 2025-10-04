@@ -1,4 +1,4 @@
-package ru.mentee.power.variables;
+package variables;
 
 public class PersonalCard {
     public static void main(String[] args) {

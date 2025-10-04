@@ -1,4 +1,4 @@
-package ru.mentee.power.variables;
+package variables;
 
 public class TemperatureConverter {
     public static final double ABSOLUTE_ZERO_CELSIUS = -273.15;
