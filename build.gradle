@@ -8,6 +8,25 @@ version = '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-encoding', 'utf-8']
+}
+
+tasks.withType(JavaExec) {
+    systemProperty "file.encoding", "utf-8"
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "utf-8"
+}
+
+allprojects {
+    tasks.withType(JavaExec) {
+        jvmArgs = ['-Dfile.encoding=UTF-8']
+    }
+}
+
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')  // тестирование
