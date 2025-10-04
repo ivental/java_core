@@ -1,4 +1,6 @@
-package ru.mentee.power.variables;
+package ru.mentee.power;
+
+import variables.PersonalCard;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,5 +8,5 @@ public class Main {
         String myName = "Илья";
         System.out.println("Меня зовут " + myName + "," +  " мне " + myAge + " лет.");
     }
-
 }
+
