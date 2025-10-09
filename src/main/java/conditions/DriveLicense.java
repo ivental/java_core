@@ -1,4 +1,4 @@
-package ru.mentee.power.conditions;
+package conditions;
 import java.util.Scanner;
 
 public class DriveLicense {
