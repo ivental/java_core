@@ -7,6 +7,7 @@ public class DriveLicence {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите Ваш возраст: ");
         int age = scanner.nextInt();
+
         boolean isAdult = age >= 18;
         if(isAdult){
             System.out.println("Вы совершеннолетний!");
