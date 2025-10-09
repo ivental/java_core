@@ -5,3 +5,11 @@
 - Пакет `ru.mentee.power` содержит:
   - `HelloWorld.java` - программа для вывода приветствия
   - `HelloGit.java` - простой пример работы с Git
+  - `PalindromeChecker.java` - программа для определения является ли заданное слово палиндромом.
+
+- Создан файл build.gradle с необходимыми зависимостями.
+
+- Создан класс для тестирования `PalindromeCheckerTest.java`, написаны тесты для проверки. 
+
+- Пакет `ru.mentee.power.conditions` содержит:
+- `DriveLicence.java` - программа с демонстрацией ветвления.
