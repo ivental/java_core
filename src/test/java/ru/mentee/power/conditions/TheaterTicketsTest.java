@@ -61,7 +61,7 @@ public class TheaterTicketsTest {
                 (700.0, offset(DELTA)); // 30% > 0% выходной
     }
 
-    // 🔥 ВАША ЗАДАЧА: Дописать этот тест! 🔥
+
     @Test
     void testCalculateTicketPrice_EdgeCases() {
         assertThat(TheaterTickets.calculateTicketPrice(6,false,false)).isCloseTo
