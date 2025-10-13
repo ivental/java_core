@@ -22,7 +22,7 @@ public class SmartThermostat {
         if (!WEEKDAYS.contains(dayOfWeek) && !WEEKENDS.contains(dayOfWeek)) {
             return ERROR_TEMP_CODE;
         }
-        int targetTemperature = 0;
+        double targetTemperature = 0;
 
         if (WEEKDAYS.contains(dayOfWeek)) {
             if (timeOfDay >= 6 && timeOfDay <= 8) {
