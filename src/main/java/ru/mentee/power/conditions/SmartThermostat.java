@@ -82,7 +82,6 @@ public class SmartThermostat {
             targetTemperature = targetTemperature + 1;
         } else if (currentOutsideTemperature < 0) {
             targetTemperature = targetTemperature - 1;
-        } else {
         }
         return targetTemperature;
     }
