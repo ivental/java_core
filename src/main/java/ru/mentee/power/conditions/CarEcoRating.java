@@ -9,7 +9,7 @@ public class CarEcoRating {
     private static final int ERROR_CODE = -1;
     private static final int MIN_RATING = 1;
     private static final int MAX_RATING = 100;
-    private static final int EURO_STANDARD_YEAR_THRESHOLD = 2020; // Замените на корректное значение
+    private static final int EURO_STANDARD_YEAR_THRESHOLD = 2020;
     private static final int BASE_RATING_ELECTRIC = 90;
     private static final int BASE_RATING_HYBRID = 70;
     private static final int BASE_RATING_DIESEL = 40;
