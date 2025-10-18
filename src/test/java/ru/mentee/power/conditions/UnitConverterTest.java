@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.within;
 
-    class UnitConverterTest {
+class UnitConverterTest {
 
     private UnitConverter converter;
     private static final double DELTA = 0.001;
@@ -19,6 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.within;
     void setUp() {
         converter = new UnitConverter();
     }
+
     @Test
     @DisplayName("Конвертация из метров в сантиметры")
     void convertMetresToCentimetres() {
@@ -121,6 +122,88 @@ import static org.assertj.core.api.AssertionsForClassTypes.within;
         assertThat(result).isEqualTo(ERROR);
     }
 
+    @Test
+    @DisplayName("Конвертация нулевого значения")
+    void convertZero() {
+        double value = 0.0;
+        String fromUnit = "Метр";
+        String toUnit = "Сантиметр";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(0.0, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Конвертация очень большого значения")
+    void convertVeryLarge() {
+        double value = 1000000.0;
+        String fromUnit = "Килограмм";
+        String toUnit = "Грамм";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(1000000000.0, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Конвертация очень маленького значения")
+    void convertVerySmall() {
+        double value = 0.001;
+        String fromUnit = "Метр";
+        String toUnit = "Сантиметр";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(0.1, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Конвертация абсолютного нуля для Цельсия")
+    void ablosuteZeroCelsium() {
+        double value = 0.0;
+        String fromUnit = "Цельсий";
+        String toUnit = "Кельвин";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(273.15, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Обработка null для fromUnit")
+    void handleNullFromUnit() {
+        double value = 5.0;
+        String fromUnit = null;
+        String toUnit = "Дюйм";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(-1.0, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Обработка null для toUnit")
+    void handleNullToUnit() {
+        double value = 5.0;
+        String fromUnit = "Дюйм";
+        String toUnit = null;
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(-1.0, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Обработка невалидных данных fromUnit")
+    void handleInvalidDataFromUnit() {
+        double value = 5.0;
+        String fromUnit = "Дюймовочка";
+        String toUnit = "Сантиметр";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(-1.0, within(DELTA));
+    }
+
+    @Test
+    @DisplayName("Обработка невалидных данных toUnit")
+    void handleInvalidDataToUnit() {
+        double value = 5.0;
+        String fromUnit = "Дюйм";
+        String toUnit = "Сантиметрус";
+        double result = converter.convert(value, fromUnit, toUnit);
+        assertThat(result).isCloseTo(-1.0, within(DELTA));
+    }
+
+
+
     @ParameterizedTest
     @CsvSource({
             "1.0, Метр, Сантиметр, 100.0",
@@ -134,6 +217,24 @@ import static org.assertj.core.api.AssertionsForClassTypes.within;
     })
     @DisplayName("Различные конвертации")
     void testVariousConversions(double value, String fromUnit, String toUnit, double expected) {
+        double convertedValue = converter.convert(value, fromUnit, toUnit);
+        assertThat(convertedValue).isCloseTo(expected, within(DELTA));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "0.0, Метр, Сантиметр, 0.0,",
+            "1000000.0, Килограмм, Грамм, 1000000000.0",
+            "0.001, Метр, Сантиметр, 0.1",
+            "0.0, Цельсий, Кельвин, 273.15",
+            "5.0, null, Дюйм, -1.0",
+            "5.0, Дюйм, null, -1.0",
+            "5.0, Дюймовочка, Сантиметр, -1.0",
+            "5.0, Дюймов, Сантиметрус, -1.0",
+
+    })
+    @DisplayName("Различные конвертации доработка")
+    void testVariousConversions1(double value, String fromUnit, String toUnit, double expected) {
         double convertedValue = converter.convert(value, fromUnit, toUnit);
         assertThat(convertedValue).isCloseTo(expected, within(DELTA));
     }
