@@ -92,7 +92,7 @@ public class RockPaperScissorsTest {
     @DisplayName("Обработка некорректного выбора компьютера")
     void handleInvalidComputerChoice() {
         String playerChoice = ROCK;
-        String computerChoice = "Огонь"; // Некорректный выбор
+        String computerChoice = "Огонь";
         String result = game.determineWinner(playerChoice, computerChoice);
         assertThat(result).isEqualTo(ERROR);
     }
