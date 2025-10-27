@@ -1,7 +1,6 @@
-package ru.mentee.power.conditions;
+package ru.mentee.power.loop;
 
 import org.junit.jupiter.api.Test;
-import ru.mentee.power.loop.ShapeDrawer;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
