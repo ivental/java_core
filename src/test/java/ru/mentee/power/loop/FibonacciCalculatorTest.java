@@ -1,10 +1,9 @@
-package ru.mentee.power.conditions;
+package ru.mentee.power.loop;
 
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import ru.mentee.power.loop.FibonacciCalculator;
 
 import java.time.Duration;
 
