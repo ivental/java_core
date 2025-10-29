@@ -12,7 +12,6 @@ public class NumberGuessingGame {
     private int minAttempts = Integer.MAX_VALUE;
     private int maxAttempts = 0;
     private int totalAttempts = 0;
-
     public NumberGuessingGame() {
         this.random = createRandom();
     }
@@ -49,8 +48,8 @@ public class NumberGuessingGame {
             System.out.println("Введите Вашу догадку (или нажмите 'q' для выхода): ");
 
             if (!scanner.hasNext()) {
-                break;
-            }
+            break;
+        }
             String input = scanner.next();
             if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit")) {
                 System.out.println("Игра прервана. Загаданное число было: " + secretNumber);
