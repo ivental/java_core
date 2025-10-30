@@ -12,6 +12,7 @@ public class NumberGuessingGame {
     private int minAttempts = Integer.MAX_VALUE;
     private int maxAttempts = 0;
     private int totalAttempts = 0;
+
     public NumberGuessingGame() {
         this.random = createRandom();
     }

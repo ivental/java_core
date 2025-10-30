@@ -83,7 +83,6 @@ public class FibonacciCalculatorTest {
         assertThat(calculator.fibonacciWithCache(-1)).isEqualTo(0);
         assertThat(calculator.isFibonacciNumber(-1)).isFalse();
         assertThat(calculator.generateFibonacciSequence(-1)).isEmpty();
-        // TODO: Дополнить тест для проверки поведения методов при отрицательных входных данных
     }
 
     @Test
