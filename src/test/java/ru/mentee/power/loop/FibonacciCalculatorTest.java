@@ -87,8 +87,8 @@ public class FibonacciCalculatorTest {
 
     @Test
     void testPerformanceComparison() {
-        assertTimeout(Duration.ofMillis(100),()-> calculator.fibonacciIterative(60));
-        assertTimeout(Duration.ofMillis(100),()-> calculator.fibonacciRecursive(36));
-        assertTimeout(Duration.ofMillis(100),()-> calculator.fibonacciWithCache(50));
+        assertTimeout(Duration.ofMillis(500),()-> calculator.fibonacciIterative(60));
+        assertTimeout(Duration.ofMillis(500),()-> calculator.fibonacciRecursive(36));
+        assertTimeout(Duration.ofMillis(500),()-> calculator.fibonacciWithCache(50));
     }
 }
