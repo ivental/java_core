@@ -46,13 +46,6 @@ public class StringUtils {
         return invertedStr.equals(cleanedStr);
     }
 
-    /**
-     * Заменяет все последовательности пробельных символов одним пробелом.
-     * Удаляет пробелы в начале и конце строки.
-     *
-     * @param str Исходная строка
-     * @return Нормализованная строка
-     */
     public static String normalizeSpaces(String str) {
         if (str == null) {
             return "";
