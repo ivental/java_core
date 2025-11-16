@@ -82,6 +82,5 @@ public class LibraryTest {
         assertThat(smallLibrary.addBook(null)).isFalse();
         assertThat(smallLibrary.checkoutBook(null)).isFalse();
         assertThat(smallLibrary.returnBook(null)).isFalse();
-
     }
 }
