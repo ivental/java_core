@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class LibraryDemo {
     public static void main(String[] args) {
         Library library = new Library(4);
-        Book book1 = new Book("Война и мир", "Лев Толстой", 1869);
-        Book book2 = new Book("Преступление и наказание", "Федор Достоевский", 1866);
-        Book book3 = new Book("Мастер и Маргарита", "Михаил Булгаков", 1967);
-        library.addBook(book1);
-        library.addBook(book2);
-        library.addBook(book3);
+        Book firstBook = new Book("Война и мир", "Лев Толстой", 1869);
+        Book secondBook = new Book("Преступление и наказание", "Федор Достоевский", 1866);
+        Book thirdBook = new Book("Мастер и Маргарита", "Михаил Булгаков", 1967);
+        library.addBook(firstBook);
+        library.addBook(secondBook);
+        library.addBook(thirdBook);
 
         System.out.println("Список доступных книг: " + Arrays.toString(library.listAvailableBooks()));
         System.out.println("Cписок выданных книг: " + Arrays.toString(library.listCheckedOutBooks()));

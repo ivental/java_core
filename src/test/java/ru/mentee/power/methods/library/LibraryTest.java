@@ -75,4 +75,10 @@ public class LibraryTest {
         assertThat(smallLibrary.addBook(book2)).isTrue();
         assertThat(smallLibrary.addBook(book3)).isFalse();
     }
+
+    @Test
+    void testNull(){
+        Library smallLibrary = new Library(2);
+        assertThat(smallLibrary.addBook(null)).isFalse();
+    }
 }

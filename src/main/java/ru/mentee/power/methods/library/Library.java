@@ -9,6 +9,9 @@ public class Library {
     }
 
     public boolean addBook(Book book) {
+        if (book == null){
+            return false;
+        }
         if (books.length > bookCount) {
             books[bookCount] = book;
             bookCount++;
