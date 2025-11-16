@@ -80,5 +80,8 @@ public class LibraryTest {
     void testNull(){
         Library smallLibrary = new Library(2);
         assertThat(smallLibrary.addBook(null)).isFalse();
+        assertThat(smallLibrary.checkoutBook(null)).isFalse();
+        assertThat(smallLibrary.returnBook(null)).isFalse();
+
     }
 }
