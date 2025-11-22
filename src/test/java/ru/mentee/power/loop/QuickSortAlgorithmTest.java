@@ -3,6 +3,7 @@ package ru.mentee.power.loop;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class QuickSortAlgorithmTest {
     @Test
@@ -17,6 +18,13 @@ public class QuickSortAlgorithmTest {
         int[] emptyArray = {};
         assertThat(QuickSortAlgorithm.quickSort(emptyArray)).isEmpty();
     }
+
+
+    @Test
+    void testNullArray(){
+        assertThatThrownBy(()-> QuickSortAlgorithm.quickSort(null)).isInstanceOf(NullPointerException.class);
+    }
+
 
     @Test
     void testSingleElementArray() {
